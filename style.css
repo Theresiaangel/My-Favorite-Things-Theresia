@@ -1,36 +1,186 @@
-html{
-    scroll-snap-type: proximity;
-}
-
-body, header, h1, h2, h3, footer {
+body {
     margin: 0;
-    padding: 0;
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Segoe UI', sans-serif;
+    background:pink;
+    color: #333;
 }
-
-body {
-    background: linear-gradient(135deg, #63c8e4, #b8c6db);
-    color: #071938;
+header h2 {
+    margin: 0;
+    font-size: 32px;
+    position: relative;
     text-align: center;
-    overflow-x: hidden;
-    padding: 20px 0;
-    transition: background 1s ease-in-out;
+    color: white;
+    animation: fadeIn 1.2s ease-in-out;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.2s ease-in-out, rainbowText 5s infinite linear;
+}
+header h2::after {
+    content: '';
+    display: block;
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(to right, #ffb3ff, #8c9eff, #b388ff);
+    margin: 12px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    animation: shimmer 2.5s infinite linear;
+    animation: fadeIn 1.2s ease-in-out, rainbowText 5s infinite linear;
 }
 
-body {
-    -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+nav li {
+    margin: 0 15px;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    animation: zoomIn 1s ease forwards;
+}
+
+.poster,
+.slide img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    animation: floatImage 6s ease-in-out infinite;
+}
+.poster:hover,
+.slide img:hover {
+    transform: scale(1.03);
+}
+.trailer-button {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 16px;
+    background-color: #666eff;
+    color: white;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    animation: pulse 2.5s infinite;
+}
+.trailer-button:hover {
+    background-color:#666eff;
+}
+.caption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+}
+.social-card {
+    margin-top: 20px;
+    text-align: center;
+}
+.social-card a {
+    display: contents;
+    background-color:#666eff#4953e5;
+    color: rgb(11, 5, 52);
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.social-card a:hover {
+    background-color:#666eff;
+}
+
+.poin li {
+    margin-bottom: 6px;
 }
 
 footer {
-    background: linear-gradient(135deg, #68686b, #b8c6db);
-    color: white;
-    margin-top: 12px;
+    background-color: #666eff;
     text-align: center;
-    overflow-x: hidden;
-    padding: 20px 0;
-    transition: transform 1s ease-in-out;
+    padding: 15px;
+    color: white;
+    margin-top: 40px;
+    font-weight: bold;
 }
 
-footer:hover {
-    transform: scale(1.05);
+iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+    max-width: 100%;
+}
+
+.navigation label {
+    cursor: pointer;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #666eff;
+    border-radius: 50%;
+    margin: 5px;
+}
+.navigation label:hover {
+    background: #131889;
+}
+@keyframes rainbowText {
+    0% { color: #ff99cc; }
+    25% { color: #cc99ff; }
+    50% { color: #99ccff; }
+    75% { color: #99ffcc; }
+    100% { color: #ff99cc; }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes shimmer {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+@keyframes zoomIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+@keyframes floatImage {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(102, 110, 255, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(102, 110, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(102, 110, 255, 0);
+    }
 }
