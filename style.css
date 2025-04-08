@@ -2,20 +2,35 @@ html{
     scroll-snap-type: proximity;
 }
 
-body, h3,h4{
+body, header, h1, h2, h3, footer {
     margin: 0;
     padding: 0;
     font-family:'Courier New', Courier, monospace;
 }
+
 body {
     background: linear-gradient(135deg, #63c8e4, #b8c6db);
     color: #071938;
     text-align: center;
     overflow-x: hidden;
-    padding: 20px;
+    padding: 20px 0;
     transition: background 1s ease-in-out;
 }
+
 body {
     -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+footer {
+    background: linear-gradient(135deg, #68686b, #b8c6db);
+    color: white;
+    margin-top: 12px;
+    text-align: center;
+    overflow-x: hidden;
+    padding: 20px 0;
+    transition: transform 1s ease-in-out;
+}
+
+footer:hover {
+    transform: scale(1.05);
+}
